@@ -381,7 +381,7 @@ const ContractTeamManagement = () => {
                   />
                 </label>
               </div>
-              <div className="mt-4 flex justify-end ">
+              <div className="mt-4 flex justify-end items-end">
                 <button
                   type="submit"
                   className="border px-[10px] py-[5px] text-sm rounded-md bg-orange-600 text-white flex gap-2 items-center"
@@ -444,7 +444,7 @@ const ContractTeamManagement = () => {
                 >
                   <path
                     fill="#ffffff"
-                    d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                    d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z"
                   />
                 </svg>
                 Add task
@@ -453,19 +453,39 @@ const ContractTeamManagement = () => {
           </form>
         </div>
         {/* Task Completion */}
-        <div className="w-[80vh] border p-4 rounded-md h-[13rem]">
-          <h2 className="flex justify-start">Complete Task</h2>
+        <div className="relative w-[80vh] border p-4 rounded-md h-[13rem]">
+          <h2 className="flex justify-start mb-3 font-semibold">
+            Complete Task
+          </h2>
           <form onSubmit={handleCompleteTask}>
-            <label>
-              Team Member Address:
-              <input
-                type="text"
-                value={teamMemberAddress}
-                onChange={(e) => setTeamMemberAddress(e.target.value)}
-              />
-            </label>
-            <br />
-            <button type="submit">Complete Task</button>
+            <div className="flex flex-col gap-2 justify-between">
+              <label className="flex justify-start">
+                <input
+                  type="text"
+                  value={teamMemberAddress}
+                  onChange={(e) => setTeamMemberAddress(e.target.value)}
+                  className="border p-2 rounded w-full"
+                  placeholder="Team member address"
+                />
+              </label>
+            </div>
+            <button
+              type="submit"
+              className="absolute bottom-4 right-4 border px-[10px] py-[5px] text-sm rounded-md bg-orange-600 text-white flex gap-2 items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="14"
+                width="14"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  fill="#ffffff"
+                  d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                />
+              </svg>
+              Complete task
+            </button>
           </form>
         </div>
 
