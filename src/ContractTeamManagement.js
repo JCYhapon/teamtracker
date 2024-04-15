@@ -290,60 +290,87 @@ const ContractTeamManagement = () => {
         </div>
       </div>
 
-      <div className="border p-4 rounded-md mt-4 overflow-x-auto h-[25rem] w-[140vh]">
-        <h2 className="mb-4 font-bold text-[25px]">Team Members</h2>
-        <table className="w-full">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="py-2">Address</th>
-              <th className="py-2">Name</th>
-              <th className="py-2">Total Tasks Assigned</th>
-              <th className="py-2">Total Tasks Completed</th>
-              <th className="py-2">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {teamMembers.map((member, index) => (
-              <tr key={index} className="border-t">
-                <td className="py-2">{member.walletAddress}</td>
-                <td className="py-2">{member.name}</td>
-                <td className="py-2">{member.totalTasksAssigned}</td>
-                <td className="py-2">{member.totalTasksCompleted}</td>
-                <td className="py-2">{member.isActive ? "🟢" : "🔴"}</td>
+      <div className="flex gap-3 items-center">
+        <div className="border p-4 rounded-md mt-4 overflow-x-auto h-[25rem] w-[95vh]">
+          <h2 className="mb-4 font-bold text-[25px]">Team Members</h2>
+          <table className="w-full">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="py-2">Address</th>
+                <th className="py-2">Name</th>
+                <th className="py-2">Total Tasks Assigned</th>
+                <th className="py-2">Total Tasks Completed</th>
+                <th className="py-2">Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {teamMembers.map((member, index) => (
+                <tr key={index} className="border-t">
+                  <td className="py-2">{member.walletAddress}</td>
+                  <td className="py-2">{member.name}</td>
+                  <td className="py-2">{member.totalTasksAssigned}</td>
+                  <td className="py-2">{member.totalTasksCompleted}</td>
+                  <td className="py-2">{member.isActive ? "🟢" : "🔴"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="flex flex-col h-[25rem] mt-4 gap-4">
+          {/* Adding New Team Member */}
+          <div className="w-[60vh] border p-4 rounded-md h-full">
+            <form onSubmit={handleAddTeamMember} className="">
+              <div className="flex mt-6 flex-col">
+                <label className="flex justify-start">
+                  Wallet Address:
+                  <input
+                    type="text"
+                    name="walletAddress"
+                    value={walletAddress}
+                    onChange={(e) => setWalletAddress(e.target.value)}
+                    className="ml-2"
+                  />
+                </label>
+
+                <label className="flex justify-start mt-4">
+                  Name:
+                  <input
+                    type="text"
+                    name="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="ml-2"
+                  />
+                </label>
+              </div>
+              <button type="submit" className="mt-4">
+                Add Team Member
+              </button>
+            </form>
+          </div>
+
+          {/* Deactivating Team Member */}
+          <div className="w-[60vh] border p-4 rounded-md h-full">
+            <h2>Deactivate Team Member</h2>
+            <form onSubmit={handleDeactivateTeamMember}>
+              <label>
+                Team Member Address:
+                <input
+                  type="text"
+                  name="teamMember"
+                  value={teamMemberAddress}
+                  onChange={(e) => setTeamMemberAddress(e.target.value)}
+                />
+              </label>
+              <br />
+              <button type="submit">Deactivate Team Member</button>
+            </form>
+          </div>
+        </div>
       </div>
 
       <div className="row">
-        {/* Adding New Team Member */}
-        <div className="column">
-          <h2>Add Team Member</h2>
-          <form onSubmit={handleAddTeamMember}>
-            <label>
-              Wallet Address:
-              <input
-                type="text"
-                name="walletAddress"
-                value={walletAddress}
-                onChange={(e) => setWalletAddress(e.target.value)}
-              />
-            </label>
-            <br />
-            <label>
-              Name:
-              <input
-                type="text"
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </label>
-            <br />
-            <button type="submit">Add Team Member</button>
-          </form>
-        </div>
         {/* Assigning Task to a Team Member */}
         <div className="column">
           <h2>Assign Task</h2>
@@ -387,23 +414,6 @@ const ContractTeamManagement = () => {
         </div>
       </div>
       <div className="row">
-        {/* Deactivating Team Member */}
-        <div className="column">
-          <h2>Deactivate Team Member</h2>
-          <form onSubmit={handleDeactivateTeamMember}>
-            <label>
-              Team Member Address:
-              <input
-                type="text"
-                name="teamMember"
-                value={teamMemberAddress}
-                onChange={(e) => setTeamMemberAddress(e.target.value)}
-              />
-            </label>
-            <br />
-            <button type="submit">Deactivate Team Member</button>
-          </form>
-        </div>
         {/* Releasing Payment */}
         <div className="column">
           <h2>Release Payment</h2>
