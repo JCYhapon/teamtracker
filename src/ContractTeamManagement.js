@@ -291,7 +291,7 @@ const ContractTeamManagement = () => {
       </div>
 
       <div className="flex gap-3 items-center">
-        <div className="border p-4 rounded-md mt-4 overflow-x-auto h-[25rem] w-[95vh]">
+        <div className="border p-4 rounded-md mt-4 overflow-x-auto h-[25rem] w-[160vh]">
           <h2 className="mb-4 font-bold text-[25px]">Team Members</h2>
           <table className="w-full">
             <thead>
@@ -322,31 +322,47 @@ const ContractTeamManagement = () => {
           <div className="w-[60vh] border p-4 rounded-md h-full">
             <form onSubmit={handleAddTeamMember} className="">
               <div className="flex mt-6 flex-col">
-                <label className="flex justify-start">
+                <label className="flex justify-start items-center">
                   Wallet Address:
                   <input
                     type="text"
                     name="walletAddress"
                     value={walletAddress}
                     onChange={(e) => setWalletAddress(e.target.value)}
-                    className="ml-2"
+                    className="ml-2 border p-2 rounded w-[20rem]"
                   />
                 </label>
 
-                <label className="flex justify-start mt-4">
+                <label className="flex justify-start mt-4 items-center">
                   Name:
                   <input
                     type="text"
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="ml-2"
+                    className="ml-2 border p-2 rounded w-[24rem]"
                   />
                 </label>
               </div>
-              <button type="submit" className="mt-4">
-                Add Team Member
-              </button>
+              <div className="mt-4 flex justify-end ">
+                <button
+                  type="submit"
+                  className="border px-[10px] py-[5px] text-sm rounded bg-orange-600 text-white flex gap-2 items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="14"
+                    width="12.25"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      fill="#ffffff"
+                      d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
+                    />
+                  </svg>
+                  Add team member
+                </button>
+              </div>
             </form>
           </div>
 
