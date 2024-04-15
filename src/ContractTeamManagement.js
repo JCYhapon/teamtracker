@@ -329,7 +329,7 @@ const ContractTeamManagement = () => {
                     name="walletAddress"
                     value={walletAddress}
                     onChange={(e) => setWalletAddress(e.target.value)}
-                    className="ml-2 border p-2 rounded w-[20rem]"
+                    className="ml-2 border p-2 rounded w-[25rem]"
                   />
                 </label>
 
@@ -340,14 +340,14 @@ const ContractTeamManagement = () => {
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="ml-2 border p-2 rounded w-[24rem]"
+                    className="ml-2 border p-2 rounded w-[30rem]"
                   />
                 </label>
               </div>
               <div className="mt-4 flex justify-end ">
                 <button
                   type="submit"
-                  className="border px-[10px] py-[5px] text-sm rounded bg-orange-600 text-white flex gap-2 items-center"
+                  className="border px-[10px] py-[5px] text-sm rounded-md bg-orange-600 text-white flex gap-2 items-center"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
