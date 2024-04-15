@@ -139,7 +139,7 @@ const ContractTeamManagement = () => {
       {notification && <p>{notification}</p>}
       {/* <button onClick={handleFetchTeamMembers}>Fetch Team Members</button> */}
       <div className="row">
-        <div className="column flex items center">
+        <div className="column flex justify-center">
           <button className="connect-metamask" onClick={connectToMetaMask}>
             Connect to MetaMask
           </button>
@@ -295,7 +295,7 @@ const ContractTeamManagement = () => {
                 <th>Name</th>
                 <th>Total Tasks Assigned</th>
                 <th>Total Tasks Completed</th>
-                <th>Active</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
