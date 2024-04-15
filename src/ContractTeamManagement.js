@@ -289,33 +289,34 @@ const ContractTeamManagement = () => {
           <div>{connectedAddress && <p>{connectedAddress}</p>}</div>
         </div>
       </div>
-      {/* Viewing of Members Address, Name and Task */}
-      <div className="row">
-        <div className="column">
-          <h2>Team Members</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Address</th>
-                <th>Name</th>
-                <th>Total Tasks Assigned</th>
-                <th>Total Tasks Completed</th>
-                <th>Status</th>
+
+      <div className="border p-4 rounded-md mt-4 overflow-x-auto h-[25rem] w-[140vh]">
+        <h2 className="mb-4 font-bold text-[25px]">Team Members</h2>
+        <table className="w-full">
+          <thead>
+            <tr className="bg-gray-200">
+              <th className="py-2">Address</th>
+              <th className="py-2">Name</th>
+              <th className="py-2">Total Tasks Assigned</th>
+              <th className="py-2">Total Tasks Completed</th>
+              <th className="py-2">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {teamMembers.map((member, index) => (
+              <tr key={index} className="border-t">
+                <td className="py-2">{member.walletAddress}</td>
+                <td className="py-2">{member.name}</td>
+                <td className="py-2">{member.totalTasksAssigned}</td>
+                <td className="py-2">{member.totalTasksCompleted}</td>
+                <td className="py-2">{member.isActive ? "🟢" : "🔴"}</td>
               </tr>
-            </thead>
-            <tbody>
-              {teamMembers.map((member, index) => (
-                <tr key={index}>
-                  <td>{member.walletAddress}</td>
-                  <td>{member.name}</td>
-                  <td>{member.totalTasksAssigned}</td>
-                  <td>{member.totalTasksCompleted}</td>
-                  <td>{member.isActive ? "🟢" : "🔴"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="row">
         {/* Adding New Team Member */}
         <div className="column">
           <h2>Add Team Member</h2>
