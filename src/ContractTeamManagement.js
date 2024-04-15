@@ -133,19 +133,19 @@ const ContractTeamManagement = () => {
   };
 
   return (
-    <div className="team-management-container ">
+    <div className="min-h-full p-8">
       {/* Display notification if available */}
       {notification && <p>{notification}</p>}
       {/* <button onClick={handleFetchTeamMembers}>Fetch Team Members</button> */}
-      <div className="row">
-        <div className="column flex justify-center">
+      <div className="flex min-w-full">
+        <div className=" flex justify-center items-center border p-4 rounded-md h-[20px]">
           <button className="connect-metamask" onClick={connectToMetaMask}>
             Connect to MetaMask
           </button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="70"
-            height="40"
+            width="40"
+            height="20"
             viewBox="0 0 212 189"
             id="metamask"
           >
@@ -279,8 +279,9 @@ const ContractTeamManagement = () => {
             </g>
           </svg>
         </div>
-        <div className="column">
-          {connectedAddress && <p>Connected Address: {connectedAddress}</p>}
+        <div className="column flex">
+          <p>Connected address: </p>
+          {connectedAddress && <p>{connectedAddress}</p>}
         </div>
       </div>
       {/* Viewing of Members Address, Name and Task */}
