@@ -490,28 +490,50 @@ const ContractTeamManagement = () => {
         </div>
 
         {/* Releasing Payment */}
-        <div className="w-[80vh] border p-4 rounded-md h-[13rem]">
-          <h2 className="flex justify-start">Release Payment</h2>
+        <div className="relative w-[80vh] border p-4 rounded-md h-[13rem]">
+          <h2 className="flex justify-start mb-3 font-semibold">
+            Release Payment
+          </h2>
           <form onSubmit={handleReleasePayment}>
-            <label>
-              Team Member Address:
-              <input
-                type="text"
-                value={teamMemberAddress}
-                onChange={(e) => setTeamMemberAddress(e.target.value)}
-              />
-            </label>
-            <br />
-            <label>
-              Amount:
-              <input
-                type="text"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-              />
-            </label>
-            <br />
-            <button type="submit">Release Payment</button>
+            <div className="flex flex-col gap-2">
+              <label>
+                <input
+                  type="text"
+                  value={teamMemberAddress}
+                  onChange={(e) => setTeamMemberAddress(e.target.value)}
+                  className="border p-2 rounded w-full"
+                  placeholder="Team member address"
+                />
+              </label>
+
+              <label>
+                <input
+                  type="text"
+                  value={amount}
+                  onChange={(e) => setAmount(e.target.value)}
+                  className="border p-2 rounded w-full"
+                  placeholder="Team member address"
+                />
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              className="absolute bottom-4 right-4 border px-[10px] py-[5px] text-sm rounded-md bg-orange-600 text-white flex gap-2 items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="14"
+                width="15.75"
+                viewBox="0 0 576 512"
+              >
+                <path
+                  fill="#ffffff"
+                  d="M64 32C28.7 32 0 60.7 0 96v32H576V96c0-35.3-28.7-64-64-64H64zM576 224H0V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V224zM112 352h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16z"
+                />
+              </svg>
+              Release payment
+            </button>
           </form>
         </div>
       </div>
