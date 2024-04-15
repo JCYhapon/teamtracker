@@ -138,10 +138,10 @@ const ContractTeamManagement = () => {
       {notification && <p>{notification}</p>}
       {/* <button onClick={handleFetchTeamMembers}>Fetch Team Members</button> */}
 
-      <div className="flex min-w-full items-center gap-4 justify-between">
+      <div className="flex min-w-full  gap-4 justify-between">
         <h1 className="text-[50px]">Team Tracker</h1>
-        <div className="flex gap-2">
-          <div className=" flex justify-center items-center border p-4 rounded-md h-[20px] font-medium hover:text-white hover:bg-orange-600  text-black ">
+        <div className="flex gap-2 justify-end items-end">
+          <div className=" flex justify-center items-center border p-4 rounded-md h-[20px] font-medium hover:text-white hover:bg-orange-600  text-black bg-white shadow">
             <button
               className="connect-metamask text-sm"
               onClick={connectToMetaMask}
@@ -285,7 +285,7 @@ const ContractTeamManagement = () => {
               </g>
             </svg>
           </div>
-          <div className=" flex text-sm border p-4 rounded-md h-[20px] items-center gap-3">
+          <div className=" flex text-sm border p-4 rounded-md h-[20px] items-center gap-3 bg-white shadow">
             <div>
               <p>Connected address: </p>
             </div>
@@ -295,7 +295,7 @@ const ContractTeamManagement = () => {
       </div>
 
       <div className="flex gap-3 items-center">
-        <div className="border p-4 rounded-md mt-4 overflow-x-auto h-[25rem] w-[160vh]">
+        <div className="border p-4 rounded-md mt-4 overflow-x-auto h-[25rem] w-[160vh] bg-white shadow">
           <h2 className="mb-4 font-bold text-[25px]">Team Members</h2>
           <table className="w-full">
             <thead>
@@ -323,7 +323,7 @@ const ContractTeamManagement = () => {
 
         <div className="flex flex-col h-[25rem] mt-4 gap-4">
           {/* Adding New Team Member */}
-          <div className="w-[60vh] border p-4 rounded-md h-full">
+          <div className="w-[60vh] border p-4 rounded-md h-full bg-white shadow">
             <form onSubmit={handleAddTeamMember} className="">
               <div className="flex mt-6 flex-col">
                 <label className="flex justify-start items-center">
@@ -371,7 +371,7 @@ const ContractTeamManagement = () => {
           </div>
 
           {/* Deactivating Team Member */}
-          <div className="w-[60vh] border p-4 rounded-md h-full">
+          <div className="w-[60vh] border p-4 rounded-md h-full bg-white shadow">
             <form onSubmit={handleDeactivateTeamMember}>
               <div className="mt-6">
                 <label className="flex justify-start items-center">
@@ -411,7 +411,7 @@ const ContractTeamManagement = () => {
 
       <div className="flex gap-4 mt-4">
         {/* Assigning Task to a Team Member */}
-        <div className="w-[80vh] border p-4 rounded-md h-[13rem]">
+        <div className="w-[80vh] border p-4 rounded-md h-[13rem] bg-white shadow">
           <h2 className="flex justify-start mb-3 font-semibold">Assign Task</h2>
           <form onSubmit={handleAssignTask}>
             <div className="flex flex-col gap-2">
@@ -457,7 +457,7 @@ const ContractTeamManagement = () => {
           </form>
         </div>
         {/* Task Completion */}
-        <div className="relative w-[80vh] border p-4 rounded-md h-[13rem]">
+        <div className="relative w-[80vh] border p-4 rounded-md h-[13rem] bg-white shadow">
           <h2 className="flex justify-start mb-3 font-semibold">
             Complete Task
           </h2>
@@ -494,7 +494,7 @@ const ContractTeamManagement = () => {
         </div>
 
         {/* Releasing Payment */}
-        <div className="relative w-[80vh] border p-4 rounded-md h-[13rem]">
+        <div className="relative w-[80vh] border p-4 rounded-md h-[13rem] bg-white shadow">
           <h2 className="flex justify-start mb-3 font-semibold">
             Release Payment
           </h2>
