@@ -133,8 +133,7 @@ const ContractTeamManagement = () => {
   };
 
   return (
-    <div className="team-management-container">
-      <h1>Team Management Application</h1>
+    <div className="team-management-container ">
       {/* Display notification if available */}
       {notification && <p>{notification}</p>}
       {/* <button onClick={handleFetchTeamMembers}>Fetch Team Members</button> */}
