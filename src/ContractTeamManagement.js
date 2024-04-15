@@ -139,7 +139,7 @@ const ContractTeamManagement = () => {
       {/* <button onClick={handleFetchTeamMembers}>Fetch Team Members</button> */}
 
       <div className="flex min-w-full  gap-4 justify-between">
-        <h1 className="text-[50px]">Team Tracker</h1>
+        <h1 className="text-[50px] text-orange-600 ">Team Tracker</h1>
         <div className="flex gap-2 justify-end items-end">
           <div className=" flex justify-center items-center border p-4 rounded-md h-[20px] font-medium hover:text-white hover:bg-orange-600  text-black bg-white shadow">
             <button
@@ -296,15 +296,19 @@ const ContractTeamManagement = () => {
 
       <div className="flex gap-3 items-center">
         <div className="border p-4 rounded-md mt-4 overflow-x-auto h-[25rem] w-[160vh] bg-white shadow">
-          <h2 className="mb-4 font-bold text-[25px]">Team Members</h2>
+          <h2 className="mb-4 font-medium text-[25px]">Members</h2>
           <table className="w-full">
             <thead>
-              <tr className="bg-gray-200">
-                <th className="py-2">Address</th>
-                <th className="py-2">Name</th>
-                <th className="py-2">Total Tasks Assigned</th>
-                <th className="py-2">Total Tasks Completed</th>
-                <th className="py-2">Status</th>
+              <tr className="bg-orange-500">
+                <th className="py-2 font-medium text-white">Address</th>
+                <th className="py-2 font-medium text-white">Name</th>
+                <th className="py-2 font-medium text-white">
+                  Total Tasks Assigned
+                </th>
+                <th className="py-2 font-medium text-white">
+                  Total Tasks Completed
+                </th>
+                <th className="py-2 font-medium text-white">Status</th>
               </tr>
             </thead>
             <tbody>
@@ -516,7 +520,7 @@ const ContractTeamManagement = () => {
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   className="border p-2 rounded w-full"
-                  placeholder="Team member address"
+                  placeholder="Amount to pay"
                 />
               </label>
             </div>
